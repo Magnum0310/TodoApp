@@ -4,6 +4,10 @@ import Note from "./Note"
 import Item from "./Item"
 import Header from "./Header"
 import Footer from "./Footer"
+import mongoose from "mongoose"
+
+const url = "mongodb://127.0.0.1:27017/person"
+mongoose.connect(url,()=>{console.log("Databse connected!")});
 
 function App(){
 
