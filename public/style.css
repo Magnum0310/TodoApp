@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root{
+    --primary-clr:white;
+    --secondary-clr:gray;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color:var(--primary-clr);
+}
+/*Top Header Component*/
+
+.topHeader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background-color: black;
+    color:var(--primary-clr);
+    padding:5px 5px 5px 10px;
+    z-index: 100;
+}
+
+/* Footer component*/
+
+.footer{
+    color:var(--primary-clr);
+    position:sticky;
+    top:100%;
+    text-align: center;
+}
+
+#root{
+    width:100vh;
+    /* min-height:100vh; */
+}
+
+body{
+    background-color: #141012;
+    background-image: url("https://www.transparenttextures.com/patterns/xv.png");
+    width:100%;
+    display:flex;
+    justify-content: center;        
+    align-items: center;
+}
+
+.title{
+    color:var(--primary-clr);
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+form{
+    width:80%;
+    margin-top:50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input{
+    height:50px;
+    width:70%;
+    margin:50px 0 10px 20px;
+    padding:10px;
+    border: none;
+    outline: none;
+    color:black;
+}
+
+.container{
+    min-height: 100vh;
+}
+
+.listBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:40px;
+    border-radius: 20px;
+}
+
+/*
+Note Component
+*/
+
+.addButton{
+    display:flex;
+    position:relative;
+    scale:1.7;
+    color: black;
+    border:none;
+    outline: none;
+    background: none;   
+}
+
+.addButton:hover{
+    cursor: pointer;
+}
+
+.fabutton{
+    scale:.8;
+    top:0px;
+    /* right:-540px; */
+    border:none;
+    outline: none;
+    background: none;
+}
+/*
+Item Component
+*/
+
+.itemList{
+    width:90%;    
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.itemList svg{
+    transition:all .3s ease-in-out;
+    transform: rotate(0deg);
+    scale:.8;
+}
+
+.itemList .arrow{
+    transform: rotate(90deg);
+}
+
+.itemList .itemTitle{
+    width:100%;
+    background-color: purple;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    padding:5px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.itemList .itemContent{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50px);
+    transition: 300ms ease-in-out;
+    color:black;    
+}
+
+
+.itemList .itemContent--active{
+    width:100%;
+    margin-bottom: 20px;
+    scale:1;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 300ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    border:1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+.deleteButton:hover{
+    cursor:pointer;
+}
+
+.itemList .deleteButton--active{
+    color:black;
+    background-color: red;
+    width:20%;
+    top:100%;
+    position: sticky;
+    opacity:1;
+    transition: 500ms ease-in-out;
+    align-self:flex-end;
+}
+
+
+.itemList .deleteButton{
+    color:black;
+    background-color: red;
+    width:20%;
+    top:100%;
+    position: sticky;
+    opacity:0;
+}
+
+.itemBody{
+    width: 100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;     
+    justify-content: space-evenly;
+}
+
+
+
+
+@media (max-width:600px){
+    .title{
+        font-size: 1rem;
+    }
+
+    form{
+        width:50%;
+        margin-top:50px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form input{
+        height:10px;
+        width:80%;
+        margin:5px 0 10px 5px;
+        padding:10px;
+    }
+
+    .footer{
+        color:var(--primary-clr);
+        position:sticky;
+        top: 100%;
+    }
+
+    .itemBody{
+        padding:10px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fabutton{
+        scale:.7;
+    }
+
+    .itemList .itemTitle{
+        font-size: 1rem;
+    }
+
+    .itemList .itemContent,
+    .itemList .itemContent--active{
+        font-size: .8rem;
+    }
+
+
+
+}
