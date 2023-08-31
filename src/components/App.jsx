@@ -4,10 +4,8 @@ import Note from "./Note"
 import Item from "./Item"
 import Header from "./Header"
 import Footer from "./Footer"
-import mongoose from "mongoose"
+import Test from "./Test"
 
-const url = "mongodb://127.0.0.1:27017/person"
-mongoose.connect(url,()=>{console.log("Databse connected!")});
 
 function App(){
 
@@ -30,6 +28,7 @@ function App(){
     <div className="container">   
         <div className="listBody">
             <Header />
+            <Test />
             <Heading />   
             <Note add={addItem}/>
             <div className="itemBody">
