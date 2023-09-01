@@ -1,11 +1,10 @@
-import React,{useState} from "react"
+import React,{useEffect,useState} from "react"
 import Heading from "./Heading"
 import Note from "./Note"
 import Item from "./Item"
 import Header from "./Header"
 import Footer from "./Footer"
-import Test from "./Test"
-
+import EmployeeCheck from "./EmployeeCheck"
 
 function App(){
 
@@ -28,8 +27,8 @@ function App(){
     <div className="container">   
         <div className="listBody">
             <Header />
-            <Test />
-            <Heading />   
+            <Heading />
+            <EmployeeCheck />
             <Note add={addItem}/>
             <div className="itemBody">
                 {/* <Item listItem ={"First Title"} listContent={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, quasi! Error laudantium laboriosam aut delectus."}/> */}
